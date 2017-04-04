@@ -12,6 +12,7 @@
 		3C249A631E91D85D00E3C240 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C249A611E91D85D00E3C240 /* Main.storyboard */; };
 		3C249A651E91D85D00E3C240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C249A641E91D85D00E3C240 /* Assets.xcassets */; };
 		3C249A681E91D85D00E3C240 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C249A661E91D85D00E3C240 /* LaunchScreen.storyboard */; };
+		3C9E27461E93A97A00CD06A5 /* detaileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9E27451E93A97A00CD06A5 /* detaileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		3C249A641E91D85D00E3C240 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C249A671E91D85D00E3C240 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C249A691E91D85D00E3C240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C9E27451E93A97A00CD06A5 /* detaileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detaileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				3C249A5D1E91D85D00E3C240 /* AppDelegate.swift */,
 				3C249A5F1E91D85D00E3C240 /* ViewController.swift */,
+				3C9E27451E93A97A00CD06A5 /* detaileViewController.swift */,
 				3C249A611E91D85D00E3C240 /* Main.storyboard */,
 				3C249A641E91D85D00E3C240 /* Assets.xcassets */,
 				3C249A661E91D85D00E3C240 /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C9E27461E93A97A00CD06A5 /* detaileViewController.swift in Sources */,
 				3C249A601E91D85D00E3C240 /* ViewController.swift in Sources */,
 				3C249A5E1E91D85D00E3C240 /* AppDelegate.swift in Sources */,
 			);
@@ -299,6 +303,7 @@
 				3C249A6E1E91D85D00E3C240 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
