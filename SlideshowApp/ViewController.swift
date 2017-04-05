@@ -9,7 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBAction func unwind(segue: UIStoryboardSegue) {
+    }
+    
+    @IBAction func moveToSlide(_ sender: Any) {
+    }
+    
+    @IBAction func backToSlidw(_ sender: Any) {
+    }
+    
+    @IBOutlet weak var playAndStop: UIButton!
 
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

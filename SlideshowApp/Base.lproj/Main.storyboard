@@ -25,28 +25,45 @@
                                 <rect key="frame" x="75" y="415" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="進む"/>
+                                <connections>
+                                    <action selector="moveToSlide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bM4-v5-XFo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cu-ba-VO0">
                                 <rect key="frame" x="172" y="415" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="backToSlidw:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cy8-fz-a6L"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTc-PQ-8O1">
                                 <rect key="frame" x="248" y="415" width="67" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="再生/停止"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="slideshowappsample1" translatesAutoresizingMaskIntoConstraints="NO" id="EF4-BP-K3E">
-                                <rect key="frame" x="67" y="49" width="240" height="301"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="slideshowappsample1" translatesAutoresizingMaskIntoConstraints="NO" id="EF4-BP-K3E">
+                                <rect key="frame" x="75" y="55" width="240" height="301"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PsL-U4-rvM">
+                                <rect key="frame" x="75" y="24" width="240" height="321"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="wOq-jJ-vNi" kind="show" id="WMY-OQ-IWo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="EF4-BP-K3E" id="sfs-88-aXr"/>
+                        <outlet property="playAndStop" destination="DTc-PQ-8O1" id="6b4-Q1-qnj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-194.40000000000001" y="258.62068965517244"/>
+            <point key="canvasLocation" x="-125.59999999999999" y="258.62068965517244"/>
         </scene>
         <!--Detaile View Controller-->
         <scene sceneID="xqK-4h-QZT">
@@ -59,10 +76,28 @@
                     <view key="view" contentMode="scaleToFill" id="1qQ-1m-FuV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdR-6T-z10">
+                                <rect key="frame" x="149" y="472" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="前の画面へ"/>
+                                <connections>
+                                    <segue destination="1A1-SA-kMH" kind="unwind" unwindAction="unwindWithSegue:" id="zZ3-h1-Rkd"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hF-mJ-JYw">
+                                <rect key="frame" x="67" y="96" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="detailImage" destination="2hF-mJ-JYw" id="fZY-dI-SL4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j91-cQ-nrN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="1A1-SA-kMH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="700" y="259"/>
         </scene>

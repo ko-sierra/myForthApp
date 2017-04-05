@@ -9,10 +9,17 @@
 import UIKit
 
 class detaileViewController: UIViewController {
+    
+    
+    @IBOutlet weak var detailImage: UIImageView!
+    
+//    var getImage:UIImage =
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        detailImage.image = getImage
+        
         // Do any additional setup after loading the view.
     }
 
