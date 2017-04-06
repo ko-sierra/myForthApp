@@ -13,7 +13,8 @@ class detaileViewController: UIViewController {
     
     @IBOutlet weak var detailImage: UIImageView!
     
-//    var getImage:UIImage =
+    var getImage: UIImage? = nil
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
