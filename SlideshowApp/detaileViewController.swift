@@ -13,13 +13,18 @@ class detaileViewController: UIViewController {
     
     @IBOutlet weak var detailImage: UIImageView!
     
-    var getImage: UIImage? = nil
+    @IBOutlet weak var moveButton: UIButton!
     
+    var getImage: UIImage? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        detailImage.image = getImage
+        //遷移前の画像をそのまま表示する
+        detailImage.image = getImage
+        
+        //ボタンの角を丸くする
+        moveButton.layer.cornerRadius = 20
         
         // Do any additional setup after loading the view.
     }

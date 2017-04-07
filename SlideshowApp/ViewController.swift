@@ -13,13 +13,26 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    //ボタンのレイアウト
+    @IBOutlet weak var moveToSlideType: UIButton!
+    @IBOutlet weak var backToSlideType: UIButton!
+    @IBOutlet weak var playAndStopType: UIButton!
+    
     var imageArray = [#imageLiteral(resourceName: "slideshowappsample1"), #imageLiteral(resourceName: "slideshowappsample2"), #imageLiteral(resourceName: "slideshowappsample3")]
     
     var imageCount = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //ボタンの角を丸くする
+        moveToSlideType.layer.cornerRadius = 15
+        backToSlideType.layer.cornerRadius = 15
+        playAndStopType.layer.cornerRadius = 15
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,12 +50,33 @@ class ViewController: UIViewController {
     }
     
     @IBAction func moveToSlide(_ sender: Any) {
-        imageView.image = UIImage(named: "slideshowappsample2")
+        imageCount += 1
+        
+        if imageCount == 0 {
+            imageView.image = UIImage(named: "slideshowappsample1")
+        } else if imageCount == 1 {
+            imageView.image = UIImage(named: "slideshowappsample2")
+        } else if imageCount == 2 {
+            imageView.image = UIImage(named: "slideshowappsample3")
+        }
+
+        
     }
     
     @IBAction func backToSlidw(_ sender: Any) {
-        imageView.image = UIImage(named: "slideshowappsample3")
+        imageCount -= 1
+        
+        if imageCount == 0 {
+            imageView.image = UIImage(named: "slideshowappsample1")
+        } else if imageCount == 1 {
+            imageView.image = UIImage(named: "slideshowappsample2")
+        } else if imageCount == 2 {
+            imageView.image = UIImage(named: "slideshowappsample3")
+        }
+
     }
+    
+    
     
     @IBAction func playAndStop(_ sender: Any) {
     }
