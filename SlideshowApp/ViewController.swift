@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //遷移先のUIImageに画像を渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let detaileViewController = segue.destination as! detaileViewController
         detaileViewController.getImage = imageView.image
@@ -36,12 +37,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func moveToSlide(_ sender: Any) {
+        imageView.image = UIImage(named: "slideshowappsample2")
     }
     
     @IBAction func backToSlidw(_ sender: Any) {
+        imageView.image = UIImage(named: "slideshowappsample3")
     }
     
-    @IBOutlet weak var playAndStop: UIButton!
+    @IBAction func playAndStop(_ sender: Any) {
+    }
 
     
 }
