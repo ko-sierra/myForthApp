@@ -84,14 +84,6 @@ class ViewController: UIViewController {
     
     func updateTimer(timer: Timer) {
         self.timer_sec += 1
-    }
-    
-    
-    @IBAction func playAndStop(_ sender: Any) {
-        // 動作中のタイマーを1つに保つために、 timer が存在しない場合だけ、タイマーを生成して動作させる
-        if self.timer == nil {
-            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-        }
         
         //二秒ごとに画像が切り替わる
         if timer_sec <= 2 {
@@ -101,6 +93,17 @@ class ViewController: UIViewController {
         } else if timer_sec <= 6 {
             imageView.image = UIImage(named: "slideshowappsample3")
         }
+
+        
+    }
+    
+    
+    @IBAction func playAndStop(_ sender: Any) {
+        // 動作中のタイマーを1つに保つために、 timer が存在しない場合だけ、タイマーを生成して動作させる
+        if self.timer == nil {
+            self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        }
+        
         
     }
 
