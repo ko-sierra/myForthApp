@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var backToSlideType: UIButton!
     @IBOutlet weak var playAndStopType: UIButton!
     
-    var imageArray = [#imageLiteral(resourceName: "slideshowappsample1"), #imageLiteral(resourceName: "slideshowappsample2"), #imageLiteral(resourceName: "slideshowappsample3")]
+    var imageArray = ["slideshowappsample1", "slideshowappsample2", "slideshowappsample3"]
     
     var imageCount = 0
     
@@ -57,13 +57,22 @@ class ViewController: UIViewController {
     @IBAction func moveToSlide(_ sender: Any) {
         imageCount += 1
         
-        if imageCount == 0 {
-            imageView.image = UIImage(named: "slideshowappsample1")
-        } else if imageCount == 1 {
-            imageView.image = UIImage(named: "slideshowappsample2")
-        } else if imageCount == 2 {
-            imageView.image = UIImage(named: "slideshowappsample3")
+        if imageCount == imageArray.count {
+            imageCount = 0
         }
+        
+        imageView.image = UIImage(named: imageArray[imageCount])
+        
+//        if imageCount == 0 {
+//            imageView.image = UIImage(named: "slideshowappsample1")
+//        } else if imageCount == 1 {
+//            imageView.image = UIImage(named: "slideshowappsample2")
+//        } else if imageCount == 2 {
+//            imageView.image = UIImage(named: "slideshowappsample3")
+//        }else{
+//            imageCount = 0
+//            imageView.image = UIImage(named: "slideshowappsample1")
+//        }
 
         
     }
@@ -71,13 +80,22 @@ class ViewController: UIViewController {
     @IBAction func backToSlidw(_ sender: Any) {
         imageCount -= 1
         
-        if imageCount == 0 {
-            imageView.image = UIImage(named: "slideshowappsample1")
-        } else if imageCount == 1 {
-            imageView.image = UIImage(named: "slideshowappsample2")
-        } else if imageCount == 2 {
-            imageView.image = UIImage(named: "slideshowappsample3")
+        if imageCount == imageArray.count {
+            imageCount = 2
         }
+        
+        imageView.image = UIImage(named: imageArray[imageCount])
+        
+//        if imageCount == 0 {
+//            imageView.image = UIImage(named: "slideshowappsample1")
+//        } else if imageCount == 1 {
+//            imageView.image = UIImage(named: "slideshowappsample2")
+//        } else if imageCount == 2 {
+//            imageView.image = UIImage(named: "slideshowappsample3")
+//        } else {
+//            imageCount = 2
+//            imageView.image = UIImage(named: "slideshowappsample3")
+//        }
 
     }
     
@@ -101,7 +119,8 @@ class ViewController: UIViewController {
     @IBAction func playAndStop(_ sender: Any) {
         // 動作中のタイマーを1つに保つために、 timer が存在しない場合だけ、タイマーを生成して動作させる
         if self.timer == nil {
-            self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(moveToSlide(_:)), userInfo: nil, repeats: true)
+            playAndStopType.setTitle("停止", for: UIControlState.normal)
         }
         
         
