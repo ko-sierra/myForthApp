@@ -80,9 +80,14 @@ class ViewController: UIViewController {
     @IBAction func backToSlidw(_ sender: Any) {
         imageCount -= 1
         
-        if imageCount == imageArray.count {
-            imageCount = 2
+        if imageCount <= 0 {
+            imageCount = imageArray.count - 1
         }
+        
+//        imageCount -= 1
+//        if imageCount <=0 {
+//            imageCount =  imageArray.count - 1
+//        }
         
         imageView.image = UIImage(named: imageArray[imageCount])
         
@@ -121,6 +126,18 @@ class ViewController: UIViewController {
         if self.timer == nil {
             self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(moveToSlide(_:)), userInfo: nil, repeats: true)
             playAndStopType.setTitle("停止", for: UIControlState.normal)
+            //再生中は他のボタンが押せないようにする
+            moveToSlideType.isEnabled = false
+            backToSlideType.isEnabled = false
+            
+        } else {
+            self.timer.invalidate()
+            self.timer = nil
+            playAndStopType.setTitle("再生", for: UIControlState.normal)
+            //停止したタイミングで他のボタンを押せるようにする
+            moveToSlideType.isEnabled = true
+            backToSlideType.isEnabled = true
+            
         }
         
         

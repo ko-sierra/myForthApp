@@ -34,7 +34,7 @@
                                 <rect key="frame" x="257" y="414" width="88" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="再生/停止"/>
+                                <state key="normal" title="再生"/>
                                 <connections>
                                     <action selector="playAndStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wGE-pH-Ftz"/>
                                 </connections>
