@@ -44,6 +44,7 @@
                                 <rect key="frame" x="40" y="72" width="321" height="352"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
+                                    <action selector="detailImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZaR-qb-2X2"/>
                                     <segue destination="wOq-jJ-vNi" kind="show" id="WMY-OQ-IWo"/>
                                 </connections>
                             </button>

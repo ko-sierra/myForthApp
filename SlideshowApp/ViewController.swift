@@ -80,7 +80,7 @@ class ViewController: UIViewController {
     @IBAction func backToSlidw(_ sender: Any) {
         imageCount -= 1
         
-        if imageCount <= 0 {
+        if imageCount < 0 {
             imageCount = imageArray.count - 1
         }
         
@@ -139,9 +139,21 @@ class ViewController: UIViewController {
             backToSlideType.isEnabled = true
             
         }
-        
-        
     }
+    
+    
+    //再生中に拡大画像に遷移するときにタイマーを止めるためのメソッド
+    @IBAction func detailImage(_ sender: Any) {
+        if self.timer != nil {
+            self.timer.invalidate()   // 現在のタイマーを破棄する
+            self.timer = nil          // startTimer() の timer == nil で判断するために、 timer = nil としておく
+        }
+    }
+    
+    
+    
+    
+    
 
     
 }
