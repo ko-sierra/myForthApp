@@ -105,20 +105,20 @@ class ViewController: UIViewController {
     }
     
     
-    func updateTimer(timer: Timer) {
-        self.timer_sec += 1
-        
-        //二秒ごとに画像が切り替わる
-        if timer_sec <= 2 {
-            imageView.image = UIImage(named: "slideshowappsample1")
-        } else if timer_sec <= 4 {
-            imageView.image = UIImage(named: "slideshowappsample2")
-        } else if timer_sec <= 6 {
-            imageView.image = UIImage(named: "slideshowappsample3")
-        }
-
-        
-    }
+//    func updateTimer(timer: Timer) {
+//        self.timer_sec += 1
+//        
+//        //二秒ごとに画像が切り替わる
+//        if timer_sec <= 2 {
+//            imageView.image = UIImage(named: "slideshowappsample1")
+//        } else if timer_sec <= 4 {
+//            imageView.image = UIImage(named: "slideshowappsample2")
+//        } else if timer_sec <= 6 {
+//            imageView.image = UIImage(named: "slideshowappsample3")
+//        }
+//
+//        
+//    }
     
     
     @IBAction func playAndStop(_ sender: Any) {
